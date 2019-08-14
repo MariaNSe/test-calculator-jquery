@@ -1,0 +1,119 @@
+.main {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    top: 86px;
+    left: 10px;
+    box-sizing: border-box;
+    border-left: 5px solid #BBCCFF;
+    border-top: 5px solid #bbccff;
+}
+.main .sideb,
+.main .right-wrapper {
+    background-color: white;
+    width: 100%;
+    float: left;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.main .header {
+    padding: 15px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.main .header i {
+    padding: 0 5px;
+    cursor: pointer;
+}
+.main .header span {
+    display: inline-block;
+    margin: 0 3px;
+    font-weight: 700;
+}
+
+.main  .header {
+    text-align: left;
+    justify-content: center;
+}
+.main .day {
+    font-size: 12em;
+    text-indent: -12px;
+    display: block;
+}
+.main .month {
+    font-size: 2.5em;
+}
+
+.main .sideb table {
+    text-align: center;
+    width: 90%;
+    margin: 30px auto 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.main .sideb table tbody:before {
+    content: "-";
+    display: block;
+    line-height: 0.75em;
+    color: transparent;
+}
+.main .sideb table th {
+    color: #002caf;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.main .sideb table td {
+    padding: 11px 5px;
+    color: #ced0ce;
+    font-size: 0.75em;
+    transition: all 0.3s;
+    position: relative;
+}
+.main .sideb table td::before {
+    content: "";
+    display: none;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -8px);
+    background-color: #002caf;
+}
+.main .sideb table td.currentDay::before {
+    display: block;
+}
+.main .sideb table td.selectable {
+    color: #303633;
+    cursor: pointer;
+}
+.main .sideb table td.selectable:hover {
+    background: #002caf;
+    color: white;
+}
+.main .sideb table td.between {
+    background-color: #333;
+    color: white;
+}
+.main .sideb table td.active, .main .sideb table td.hover {
+    background: #002caf;
+    color: white;
+}
+
+@media (max-width: 1020px) {
+    .main {
+        position: relative;
+        width: 100%;
+        top: 24px;
+        height: 440px;
+        box-sizing: border-box;
+        border: none;
+    }
+}

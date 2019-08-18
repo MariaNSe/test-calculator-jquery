@@ -92,13 +92,13 @@ function getMonth(currentDay) {
 
 function dateClickHandler(elem) {
 
-  var day1 = parseInt($(elem).html());
+   var day1 = parseInt($(elem).html());
   if (clickCounter === 0) {
     $("td.selectable").each(function () {
       $(this).removeClass("active between hover");
     });
   }
-  clickCounter++;
+   clickCounter++;
   if (clickCounter === 2) {
     $("td.selectable").each(function () {
       $(this).unbind('mouseenter').unbind('mouseleave');
@@ -109,27 +109,6 @@ function dateClickHandler(elem) {
   $(elem).toggleClass("active");
   $("td.selectable").hover(function () {
 
-    var day2 = parseInt($(this).html());
-    $(this).addClass("hover");
-    $("td.selectable").each(function () {
-      $(this).removeClass("between");
-
-    });
-    if (day1 > day2 + 1) {
-      $("td.selectable").each(function () {
-        var dayBetween = parseInt($(this).html());
-        if (dayBetween > day2 && dayBetween < day1) {
-          $(this).addClass("between");
-        }
-      });
-    } else if (day1 < day2 + 1) {
-      $("td.selectable").each(function () {
-        var dayBetween = parseInt($(this).html());
-        if (dayBetween > day1 && dayBetween < day2) {
-          $(this).addClass("between");
-        }
-      });
-    }
   }, function () {
     $(this).removeClass("hover");
   });
@@ -198,18 +177,11 @@ initCalender(getMonth(new Date()));
 
 var clickCounter = 0;
 
+
 $(".fa-angle-left").click(function () {
   getPrevMonth();
-  $(".main").addClass("is-rotated-left");
-  setTimeout(function () {
-    $(".main").removeClass("is-rotated-left");
-  }, 195);
 });
 
 $(".fa-angle-right").click(function () {
   getNextMonth();
-  $(".main").addClass("is-rotated-right");
-  setTimeout(function () {
-    $(".main").removeClass("is-rotated-right");
-  }, 195);
 });

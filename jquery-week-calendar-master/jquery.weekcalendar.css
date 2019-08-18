@@ -297,6 +297,7 @@ table.wc-time-slots {
 
 .wc-cal-event .wc-title {
     position: relative;
+    background: #055ac6;
 }
 
 .wc-container .ui-resizable-s {

@@ -177,7 +177,6 @@ initCalender(getMonth(new Date()));
 
 var clickCounter = 0;
 
-
 $(".fa-angle-left").click(function () {
   getPrevMonth();
 });

@@ -363,6 +363,7 @@
           * Reload the calendar to whatever week the date passed in falls on.
           */
         gotoDate: function (date) {
+          var newDate = new Date(this.element.data('startDate').getTime() + MILLIS_IN_WEEK + MILLIS_IN_DAY);
           this._clearCalendar();
           this._loadCalEvents(date);
         },
